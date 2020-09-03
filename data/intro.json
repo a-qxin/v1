@@ -22,23 +22,23 @@
         "socials": [
             {
                 "name": "github",
-                "link": ""
+                "link": "https://github.com/a-qxin"
             },
             {
                 "name": "codepen",
-                "link": ""
+                "link": "https://codepen.io/a-qxin"
             },
             {
                 "name": "linkedin",
-                "link": ""
+                "link": "https://www.linkedin.com/in/brendayau/"
             },
             {
                 "name": "twitter",
-                "link": ""
+                "link": "https://twitter.com/aqxindev"
             },
             {
                 "name": "email",
-                "link": ""
+                "link": "mailto:aqxin.cs@gmail.com"
             }
         ]
     }
