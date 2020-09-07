@@ -2,7 +2,7 @@
     "data": {
         "greeting": "Hey! I'm Brenda.",
         "description": "I'm a 4th-year undergraduate studying Computer Science at San Francisco State University.",
-        "projects-intro": "I’ve been learning front-end development through my side projects and my internship at Infinite Options. Below are the <strong>technologies</strong> I work with most.",
+        "projects-intro": "I’m a software engineer with a passion for developing web user interfaces. Below are the <strong>technologies</strong> I work with most.",
         "languages": [
             "JavaScript",
             "Python",
@@ -17,29 +17,28 @@
         ],
         "design": [
             "Figma",
-            "Adobe XD",
-            "Photoshop"
+            "Adobe XD"
         ],
         "socials": [
             {
                 "name": "github",
-                "link": ""
+                "link": "https://github.com/a-qxin"
             },
             {
                 "name": "codepen",
-                "link": ""
+                "link": "https://codepen.io/a-qxin"
             },
             {
                 "name": "linkedin",
-                "link": ""
+                "link": "https://www.linkedin.com/in/brendayau/"
             },
             {
                 "name": "twitter",
-                "link": ""
+                "link": "https://twitter.com/aqxindev"
             },
             {
                 "name": "email",
-                "link": ""
+                "link": "mailto:aqxin.cs@gmail.com"
             }
         ]
     }
