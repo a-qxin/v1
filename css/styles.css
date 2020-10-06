@@ -1,50 +1,73 @@
 body {
-   font-family: helvetica, sans-serif;
- }
- 
- .site-container {
+   font-family: 'open-sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a {
+   color: black;
+   text-decoration: none;
+   -webkit-transition: color 1s;
+   transition: color .2s;
+}
+
+a:hover {
+   color: grey;
+}
+
+ul {
+   list-style: none;
+}
+
+.site-container {
    width: 800px;
-   margin: 0 auto;
- }
- .dp-container {
-   text-align:center;
- }
- .dp {
-   border-radius:100px; 
-   height: 170px; 
+   margin: 30px auto;
+}
+
+.dp-container {
+   text-align: center;
+}
+
+.dp {
+   border-radius: 100px;
+   height: 170px;
    width: auto;
- }
- .greeting {
-   text-align:center;
+}
+
+.greeting {
+   text-align: center;
    margin: 20px 0;
    font-weight: bold;
- }
- ul {
-   list-style: none;
- }
- .projects {
-   display:table;
-   margin: 60px 20px;
- }
- .project-image-container {
+}
+
+.projects {
+   display: table;
+   margin: 40px 20px;
+}
+
+.project-image-container {
    width: 350px;
    display: table-cell;
- }
- .project-content {
+}
+
+.project-content {
    width: 350px;
    margin: 30px;
    display: table-cell;
-   float:right;
- }
- .project-image {
+   float: right;
+}
+
+.project-image {
    width: 100%;
- }
- .socials-container {
-   text-align:center; 
- }
- .socials {
-   display: inline;
- }
- .footer {
+}
+
+.socials-container {
    text-align: center;
- }
+}
+
+.socials {
+   display: inline;
+   margin: 8px;
+}
+
+.footer {
+   text-align: center;
+}

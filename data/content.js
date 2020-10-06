@@ -143,5 +143,5 @@ function siteTemplate(siteContent) {
 
 document.getElementById("output").innerHTML = `
 ${content.map(siteTemplate).join('')}
-<p class="footer">Site created in HTML + CSS + JS by me ✨</p>
+<p class="footer">Designed and built in HTML + CSS + JS by me ✨</p>
 `
