@@ -11,8 +11,8 @@ const content = [
     ],
     tools: [
       "React",
+      "Gatsby",
       "Node.js",
-      "MongoDB",
       "Git"
     ],
     design: [
@@ -44,11 +44,6 @@ const content = [
         name: "email",
         link: "mailto:aqxin.cs@gmail.com",
         iconLink: "<ion-icon name=\"mail-outline\"></ion-icon>"
-      },
-      {
-        name: "resume",
-        link: "#",
-        iconLink: "<ion-icon name=\"reader-outline\"></ion-icon>"
       }
     ],
     projectsHeader: "Here are some <strong>projects</strong> I’ve worked on:",
@@ -93,9 +88,22 @@ const content = [
   }
 ];
 
+// function languages(languages) {
+//   return `
+//     <div>
+//       ${languages.map(languages => `
+//         <div>
+//           <p>${languages}</p>
+//         </div>
+//       `)}
+//     </div>
+//   `
+// }
+
 function socialsTemplate(socials) {
   return `
     <div class='socials-container'>
+      <p>Let's connect!</p>
       ${socials.map(socials => `
         <div class='socials'>
           <a href='${socials.link}' alt='${socials.name}'>${socials.iconLink}</a>
@@ -104,6 +112,14 @@ function socialsTemplate(socials) {
     </div>
   `
 }
+
+// function skills(skills) {
+//   return `
+//     <div>
+
+//     </div>
+//   `
+// }
 
 function projectTemplate(projects) {
   return `
@@ -121,27 +137,33 @@ function projectTemplate(projects) {
         </div>
       `).join('')}
     </div>
-    `
+  `
 }
 
 function siteTemplate(siteContent) {
   return `
-        <div class='site-container'>
-          <div class='dp-container'><img class='dp' src='${siteContent.dpLink}'></img></div>
-          <div class='greeting'>${siteContent.greeting}</div>
-          <div>${siteContent.intro}</div>
-          <ul>languages: <li>${siteContent.languages}</li></ul>
-          <ul>tools: <li>${siteContent.tools}</li></ul>
-          <ul>design: <li>${siteContent.design}</li></ul>
-          <div>${siteContent.projectsHeader}</div>
-          ${projectTemplate(siteContent.projects)}
-          ${socialsTemplate(siteContent.socials)}
-          <hr />
-      </div>
-    `
+    <div class='site-container'>
+      <div class='dp-container'><img class='dp' src='${siteContent.dpLink}'></img></div>
+      <div class='greeting'>${siteContent.greeting}</div>
+      <div>${siteContent.intro}</div>
+      <ul>languages: <li>${siteContent.languages} </li></ul>
+      <ul>tools: <li>${siteContent.tools}</li></ul>
+      <ul>design: <li>${siteContent.design}</li></ul>
+      <div>${siteContent.projectsHeader}</div>
+      ${projectTemplate(siteContent.projects)}
+      ${socialsTemplate(siteContent.socials)}
+      <hr />
+    </div>
+  `
 }
 
 document.getElementById("output").innerHTML = `
 ${content.map(siteTemplate).join('')}
 <p class="footer">Designed + built in HTML + CSS + JS by Brenda Yau ✨</p>
 `
+
+// {
+//   name: "resume",
+//   link: "#",
+//   iconLink: "<ion-icon name=\"reader-outline\"></ion-icon>"
+// }
