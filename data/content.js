@@ -159,7 +159,7 @@ function siteTemplate(siteContent) {
       <hr />
       <p class='footer'>${siteContent.footer}</p>
       <div class='footer'>
-        <a href='${siteContent.source}' class='footer'>source code</a>
+        <a href='${siteContent.source}' class='footer'><u>source code</u></a>
       </div> 
     </div>
   `
