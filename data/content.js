@@ -84,7 +84,8 @@ const content = [
         description: "Desktop webapp design prototype created in two days using Adobe XD during the Adobe x Netflix Creative Jam.",
         picUrl: "https://i.imgur.com/3bVgsQ2.png"
       }
-    ]
+    ],
+    footer: "Designed + built in HTML + CSS + JS by Brenda Yau ✨",
   }
 ];
 
@@ -127,7 +128,7 @@ function projectTemplate(projects) {
       ${projects.map(projects => `
         <div class='projects'>
           <div class='project-image-container'>
-            <img class="project-image" src='${projects.picUrl}'></img>
+            <a href='${projects.url}'><img class="project-image" src='${projects.picUrl}'></img></a>
           </div>
           <div class='project-content'>
             <a href='${projects.url}'><strong>${projects.title}</strong></a>
@@ -153,13 +154,13 @@ function siteTemplate(siteContent) {
       ${projectTemplate(siteContent.projects)}
       ${socialsTemplate(siteContent.socials)}
       <hr />
+      <p class='footer'>${siteContent.footer}</p>
     </div>
   `
 }
 
 document.getElementById("output").innerHTML = `
 ${content.map(siteTemplate).join('')}
-<p class="footer">Designed + built in HTML + CSS + JS by Brenda Yau ✨</p>
 `
 
 // {
