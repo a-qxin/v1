@@ -85,7 +85,8 @@ const content = [
         picUrl: "https://i.imgur.com/3bVgsQ2.png"
       }
     ],
-    footer: "Designed + built in HTML + CSS + JS by Brenda Yau ✨",
+    footer: "Built with HTML + CSS + JS ✨",
+    source: "https://github.com/a-qxin/v1",
   }
 ];
 
@@ -144,7 +145,9 @@ function projectTemplate(projects) {
 function siteTemplate(siteContent) {
   return `
     <div class='site-container'>
-      <div class='dp-container'><img class='dp' src='${siteContent.dpLink}'></img></div>
+      <div class='dp-container'>
+        <img class='dp' src='${siteContent.dpLink}'></img>
+      </div>
       <div class='greeting'>${siteContent.greeting}</div>
       <div>${siteContent.intro}</div>
       <ul>languages: <li>${siteContent.languages} </li></ul>
@@ -155,6 +158,9 @@ function siteTemplate(siteContent) {
       ${socialsTemplate(siteContent.socials)}
       <hr />
       <p class='footer'>${siteContent.footer}</p>
+      <div class='footer'>
+        <a href='${siteContent.source}' class='footer'>source code</a>
+      </div> 
     </div>
   `
 }
