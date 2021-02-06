@@ -2,22 +2,24 @@ const content = [
   {
     dpLink: "./img/me.png",
     greeting: "Hey! I'm Brenda.",
-    intro: "I’m a software engineer with a passion for developing web user interfaces. I'm currently a 4th-year undergrad studying Computer Science at San Francisco State. Below are the <strong>technologies</strong> I work with most:",
+    intro: "I’m a software engineer + product designer with a passion for creating simple and clean user experiences. I'm currently a senior Computer Science student. Below are the <strong>skills</strong> I use most:",
     languages: [
-      "JavaScript",
-      "Python",
-      "Java",
-      "C++"
+      "HTML/CSS/JS",
+      "React",
+      "Express",
+      "Git",
     ],
     tools: [
-      "React",
-      "Gatsby",
-      "Node.js",
-      "Git"
+      "Figma",
+      "Adobe XD",
+      "Illustrator",
+      "Procreate"
     ],
     design: [
-      "Figma",
-      "Adobe XD"
+      "Visual Design",
+      "User Research",
+      "Wireframing",
+      "Prototyping",
     ],
     socials: [
       {
@@ -50,7 +52,7 @@ const content = [
     projects: [
       {
         title: "Omlet",
-        url: "https://github.com/a-qxin/omelette/tree/master/src",
+        url: "https://github.com/a-qxin/Omlet",
         tech: [
           "React",
           "Node.js",
@@ -58,7 +60,7 @@ const content = [
           "Express",
           "Figma"
         ],
-        description: "Hierarchical flashcards + gamified study web app built by students for students. Desktop platform in ongoing development with my team. Built for BuildConnect Summer 2020.",
+        description: "Hierarchical flashcards + gamified study web app built by students for students. Desktop platform in ongoing development. Built for BuildConnect Summer 2020.",
         picUrl: "https://i.imgur.com/n0yfgff.jpg"
       },
       {
@@ -76,7 +78,6 @@ const content = [
         title: "CineMates",
         url: "https://xd.adobe.com/view/865851ef-db59-40a6-ba44-16bcb8d39f48-d30b/?fullscreen",
         tech: [
-          "Design",
           "Wireframing",
           "Prototyping",
           "Adobe XD"
@@ -90,17 +91,35 @@ const content = [
   }
 ];
 
-// function languages(languages) {
-//   return `
-//     <div>
-//       ${languages.map(languages => `
-//         <div>
-//           <p>${languages}</p>
-//         </div>
-//       `)}
-//     </div>
-//   `
-// }
+function languagesTemplate(languages) {
+  return `
+    <div>
+      ${languages.map(languages => `
+        <li>${languages}</li>
+      `).join('')}
+    </div>
+  `
+}
+
+function toolsTemplate(tools) {
+  return `
+    <div>
+      ${tools.map(tools => `
+        <li>${tools}</li>
+      `).join('')}
+    </div>
+  `
+}
+
+function designTemplate(design) {
+  return `
+    <div>
+      ${design.map(design => `
+        <li>${design}</li>
+      `).join('')}
+    </div>
+  `
+}
 
 function socialsTemplate(socials) {
   return `
@@ -108,20 +127,12 @@ function socialsTemplate(socials) {
       <p>Let's connect!</p>
       ${socials.map(socials => `
         <div class='socials'>
-          <a href='${socials.link}' alt='${socials.name}'>${socials.iconLink}</a>
+          <a href='${socials.link}' target="_blank" alt='${socials.name}'>${socials.iconLink}</a>
         </div>
       `).join('')}
     </div>
   `
 }
-
-// function skills(skills) {
-//   return `
-//     <div>
-
-//     </div>
-//   `
-// }
 
 function projectTemplate(projects) {
   return `
@@ -129,11 +140,11 @@ function projectTemplate(projects) {
       ${projects.map(projects => `
         <div class='projects'>
           <div class='project-image-container'>
-            <a href='${projects.url}'><img class="project-image" src='${projects.picUrl}'></img></a>
+            <a href='${projects.url}' target="_blank"><img class="project-image" src='${projects.picUrl}'></img></a>
           </div>
           <div class='project-content'>
-            <a href='${projects.url}'><strong>${projects.title}</strong></a>
-            <div>${projects.tech}</div>
+            <a href='${projects.url}' target="_blank"><strong>${projects.title}</strong></a>
+            <div class='tech'>${projects.tech.map(tech => `${tech}`).join(', ')}</div>
             <p>${projects.description}</p>
           </div>
         </div>
@@ -149,17 +160,19 @@ function siteTemplate(siteContent) {
         <img class='dp' src='${siteContent.dpLink}'></img>
       </div>
       <div class='greeting'>${siteContent.greeting}</div>
-      <div>${siteContent.intro}</div>
-      <ul>languages: <li>${siteContent.languages} </li></ul>
-      <ul>tools: <li>${siteContent.tools}</li></ul>
-      <ul>design: <li>${siteContent.design}</li></ul>
+      <div class='intro'>${siteContent.intro}</div>
+      <div class='row'>
+        <div class='col'><ul><b>Design</b> ${designTemplate(siteContent.design)} </ul></div>
+        <div class='col'><ul><b>Tools</b> ${toolsTemplate(siteContent.tools)} </ul></div>
+        <div class='col'><ul><b>Development</b> ${languagesTemplate(siteContent.languages)} </ul></div>
+      </div>
       <div>${siteContent.projectsHeader}</div>
       ${projectTemplate(siteContent.projects)}
       ${socialsTemplate(siteContent.socials)}
       <hr />
       <p class='footer'>${siteContent.footer}</p>
       <div class='footer'>
-        <a href='${siteContent.source}' class='footer'><u>source code</u></a>
+        <a href='${siteContent.source}' target="_blank" class='footer'><u>source code</u></a>
       </div> 
     </div>
   `
